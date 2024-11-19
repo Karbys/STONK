@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap');
+:root{
+    --dark_100: #121212;
+    --dark_200: #282828;
+    --dark_300: #3f3f3f;
+    --dark_400: #575757;
+    --dark_500: #717171;
+    --dark_600: #8b8b8b;
+    --night: #212121;
+    --green_100: #0bdb27;
+    --green_200: #4ce048;
+    --green_300: #44FFA1;
+    --dark_gradient: #010f0d;
+    --green_gradient1: #064232;
+    --green_gradient2: #289175;
+    --white: #FFFFFF;
+    --green_400: #afffff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: 'Outfit';
+}
+body{
+    background-color: var(--white);
+}
+
+html {
+    scroll-behavior: smooth;
+}
+.navbar{
+    opacity: 0.85;
+    width: 100%;
+    height: auto;
+    position: fixed;
+    z-index: 1;
+    padding: 1rem 3rem;
+    background: linear-gradient(90deg, var(--dark_gradient) 0%, var(--green_gradient1) 50%, var(--green_gradient2) 100%);
+    /* background: linear-gradient(to right, var(--dark_100) 60% , var(--dark_200) 100%); */
+    color: var(--green_300);
+    & .nav-con{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & h1{
+            font-size: 55px;
+            font-family: "Handjet", sans-serif;
+            font-weight: 300;
+        }
+        & ul{
+            font-weight: 600;
+            display: flex;
+            & li{   
+                
+                list-style: none;
+                margin-right: 1rem;
+                & a{
+                    border: 2px solid transparent;
+                    padding: 0.5rem 1rem;
+                    color: var(--white);
+                    /* background-color: var(--green_300); */
+                    border-radius: 0.5rem;
+                    /* color: var(--dark_100); */
+                    text-decoration: none;
+                    transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+                }
+                & a:hover{
+                    background: var(--dark_200);
+                    color: var(--green_300);
+                }
+                & a:active{
+                    /* border: 2px solid var(--green_300); */
+                    background-color: var(--dark_300);
+                    color: var(--green_100);
+                }
+            }
+        }
+    }
+}
+.section_1 {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(90deg, var(--dark_gradient) 0%, var(--green_gradient1) 50%, var(--green_gradient2) 100%);
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center; /* Centers vertically */
+    & .particle div {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        background-color: transparent;
+        border: 3px solid var(--green_300);
+        top: 30px;
+        left: 30px;
+    } 
+    & .topic h1{
+        color: var(--white);
+        text-align: center;
+        /* border: 1px solid var(--white); */
+    }
+    & .stock-predict{
+        position: absolute;
+        bottom: 20%;
+        /* border: 1px solid red; */
+        /* From Uiverse.io by kleenpulse */ 
+        & .btn {
+            --border-color: linear-gradient(-45deg, #ffae00, var(--green_gradient2), var(--green_100));
+            --border-width: 0.125em;
+            --curve-size: 0.5em;
+            --blur: 30px;
+            --bg: #080312;
+            color: var(--white);
+            cursor: pointer;
+            /* use position: relative; so that BG is only for .btn */
+            position: relative;
+            isolation: isolate;
+            display: inline-grid;
+            place-content: center;
+            padding: 0.5em 1.5em;
+            font-size: 30px;
+            border: 0;
+            text-transform: uppercase;
+            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
+            clip-path: polygon(
+            /* Top-left */ 0% var(--curve-size),
+            var(--curve-size) 0,
+            /* top-right */ 100% 0,
+            100% calc(100% - var(--curve-size)),
+            /* bottom-right 1 */ calc(100% - var(--curve-size)) 100%,
+            /* bottom-right 2 */ 0 100%
+            );
+            transition: color 250ms;
+        }
+        
+        & .btn::after,
+        & .btn::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+        }
+        
+        & .btn::before {
+            background: var(--border-color);
+            background-size: 300% 300%;
+            animation: move-bg7234 5s ease infinite;
+            z-index: -2;
+        }
+        
+        & .btn::after {
+            background: var(--dark_100);
+            z-index: -1;
+            clip-path: polygon(
+            /* Top-left */ var(--border-width)
+                calc(var(--curve-size) + var(--border-width) * 0.5),
+            calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
+            /* top-right */ calc(100% - var(--border-width)) var(--border-width),
+            calc(100% - var(--border-width))
+                calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+            /* bottom-right 1 */
+                calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+                calc(100% - var(--border-width)),
+            /* bottom-right 2 */ var(--border-width) calc(100% - var(--border-width))
+            );
+            transition: clip-path 500ms;
+        }
+        
+        & .btn:where(:hover, :focus)::after {
+            clip-path: polygon(
+            /* Top-left */ calc(100% - var(--border-width))
+                calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+            calc(100% - var(--border-width)) var(--border-width),
+            /* top-right */ calc(100% - var(--border-width)) var(--border-width),
+            calc(100% - var(--border-width))
+                calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
+            /* bottom-right 1 */
+                calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+                calc(100% - var(--border-width)),
+            /* bottom-right 2 */
+                calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
+                calc(100% - var(--border-width))
+            );
+            transition: 200ms;
+        }
+        
+        & .btn:where(:hover, :focus) {
+            color: #fff;
+        }
+        
+        
+    }
+}
+.section_2{
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    /* From Uiverse.io by joe-watson-sbf */ 
+    
+    & .flip-con {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr); /* Default for larger screens */
+        max-width: 1000px; /* Set your desired maximum width */
+        row-gap: 3rem;
+        margin: 0 auto; /* Centers the grid container */
+        margin-top: 5rem;
+        & .flip-card {
+            background-color: transparent;
+            width: 190px;
+            height: 254px;
+            perspective: 1000px;
+        }
+        
+        & .title {
+            font-size: 1.5em;
+            font-weight: 900;
+            text-align: center;
+            margin: 0;
+        }
+        
+        & .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+        }
+        
+        & .flip-card:hover .flip-card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        & .flip-card-front, .flip-card-back {
+            box-shadow: 0 8px 14px 0 rgba(0,0,0,0.2);
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            border: 1px solid var(--night);
+            border-radius: 1rem;
+        }
+        
+        & .flip-card-front {
+            background: linear-gradient(120deg, var(--green_gradient2) 60%, var(--green_gradient1) 88%,
+            var(--green_gradient2) 40%, #063c2e 48%);
+            color: var(--white);
+        }
+        
+        & .flip-card-back {
+            background: linear-gradient(120deg, var(--green_gradient2) 30%, var(--green_gradient1) 88%,
+            var(--green_gradient2) 40%, #063c2e 78%);
+            color: white;
+            transform: rotateY(180deg);
+        }
+    }
+    & .Member{
+        margin-top: 7rem;
+        margin-left: 5rem;
+        h1 {
+            font-size: 60px;
+            background: -webkit-linear-gradient(var(--green_300),var(--green_gradient1));
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+    }
+    
+    @media (max-width: 1024px) {
+        .flip-con {
+            grid-template-columns: repeat(4, 1fr); /* 4 columns on medium screens */
+        }
+    }
+    
+    @media (max-width: 768px) {
+        .flip-con {
+            margin-left: 4rem;
+            grid-template-columns: repeat(2, 1fr); /* 2 columns on smaller tablets */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .flip-con {
+            margin-left: 4rem;
+            grid-template-columns: 1fr; /* 1 column on mobile screens */
+        }
+    }
+}    
+.graph-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 880px; /* Set the height of the container */
+    width: 2100px; /* Set the width of the container */
+    /* background: #001f1d; */
+    position: relative;
+}
+
+#stockCanvas {
+    position: absolute;
+    width: 100%; /* Ensure the canvas takes full width of the container */
+    height: 100%; /* Ensure the canvas takes full height of the container */
+    top: 10%
+    /* border: 1px solid #00ff99; */
+}
+
+
+
+
+
+.particle div:nth-child(1){
+    top: 50%;
+    left: 60%;
+    animation: animate 8s linear infinite;
+}
+.particle div:nth-child(2){
+    top: 10%;
+    left: 42%;
+    animation: animate 6s linear infinite;
+}
+.particle div:nth-child(3){
+    top: 60%;
+    left: 43%;
+    animation: animate 5s linear infinite;
+}
+.particle div:nth-child(4){
+    top: -21%;
+    left: 90%;
+    animation: animate 10s linear infinite;
+}
+.particle div:nth-child(5){
+    top: 100%;
+    left: 32%;
+    animation: animate 7s linear infinite;
+}
+.particle div:nth-child(6){
+    top: -10%;
+    left: 8%;
+    animation: animate 9s linear infinite;
+}
+.particle div:nth-child(7){
+    top: 68%;
+    left: 12%;
+    animation: animate 11s linear infinite;
+}
+.particle div:nth-child(8){
+    top: 12%;
+    left: 80%;
+    animation: animate 7s linear infinite;
+}
+.particle div:nth-child(9){
+    top: 62%;
+    left: 97%;
+    animation: animate 8s linear infinite;
+}
+.particle div:nth-child(10){
+    top: 9%;
+    left: 3%;
+    animation: animate 8s linear infinite;
+}
+.particle div:nth-child(11){
+    top: 100%;
+    left: 87%;
+    animation: animate 6s linear infinite;
+}
+.particle div:nth-child(12){
+    top: -10%;
+    left: 80%;
+    animation: animate 10s linear infinite;
+}
+.particle div:nth-child(13){
+    top: -10%;
+    left: 0%;
+    animation: animate 9.5s linear infinite;  
+}
+.particle div:nth-child(14){
+    top: 75%;
+    left: 68%;
+    animation: animate 7s linear infinite;
+}
+.particle div:nth-child(15){
+    top: -12%;
+    left: 87%;
+    animation: animate 6s linear infinite;
+}
+.particle div:nth-child(15){
+    top: 32%;
+    left: 22%;
+    animation: animate 8s linear infinite;
+}
+.particle div:nth-child(16){
+    top: 100%;
+    left: 0%;
+    animation: animate 8s linear infinite;
+}
+
+
+@keyframes animate{
+    0%{
+        transform: scale(0) translateY(0) rotate(0);
+        opacity: 1;
+    }
+    100%{
+        transform: scale(1.2) translateY(-100px) rotate(360deg);
+        opacity: 1;
+    }
+}
+
+@keyframes move-bg7234 {
+    0% {
+    background-position: 31% 0%;
+    }
+
+    50% {
+    background-position: 70% 100%;
+    }
+
+    100% {
+    background-position: 31% 0%;
+    }
+}
+
