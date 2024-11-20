@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handjet:wght@100..900&display=swap');
+:root{
+    --dark_100: #121212;
+    --dark_200: #282828;
+    --dark_300: #3f3f3f;
+    --dark_400: #575757;
+    --dark_500: #717171;
+    --dark_600: #8b8b8b;
+    --night: #212121;
+    --green_100: #0bdb27;
+    --green_200: #4ce048;
+    --green_300: #44FFA1;
+    --dark_gradient: #010f0d;
+    --green_gradient1: #064232;
+    --green_gradient2: #289175;
+    --white: #FFFFFF;
+    --green_400: #afffff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 18px;
+    font-family: 'Outfit';
+}
+
+.header{
+    & h1{
+        font-size: 36px;
+    }
+    & .button{
+        margin: 1rem 0rem;
+    }
+    & a{
+        border-radius: 10px;
+        padding: 0.5rem 1.5rem;
+        background-color: red;
+        text-decoration: none;
+        color: white;
+    }
+    & a:hover{
+        background-color: darkred;
+    }
+}
+
+input{
+    border-radius: 5px;
+}
+label{
+    font-size: 24px;
+}

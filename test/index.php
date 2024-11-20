@@ -4,21 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Interactive Plot with Plotly</title>
+    <link rel="stylesheet" href="../asset/css/test.css">
 </head>
 <body>
-    <h1>Interactive Plot from Python</h1>
-    <a href="../">Back</a>
-
+    <div class="header">
+        <h1>Interactive Plot from Python</h1>
+        <div class="button">
+            <a href="../">Back</a>
+        </div>
+    </div>
     <!-- Form to collect user inputs for the stock ticker and prediction period -->
-    <form action="process.php" method="post">
-        <label for="ticker">Enter stock ticker (e.g., AAPL, GOOGL): </label>
-        <input type="text" id="ticker" name="ticker" required>
-        <br>
-        <label for="years">Enter years of prediction (1 to 4): </label>
-        <input type="number" id="years" name="years" min="1" max="4" required>
-        <br>
-        <button type="submit">Submit</button>
-    </form>
+    <div class="form-con">
+        <form action="process.php" method="post">
+            <div class="ticker-con">
+                <label for="ticker">Enter stock ticker (e.g., AAPL, GOOGL): </label>
+                <br>
+                <input type="text" id="ticker" name="ticker" required>
+            </div>
+            <div class="year-con">
+                <label for="years">Enter years of prediction (1 to 4): </label>
+                <br>
+                <input type="range" id="years" name="years" min="1" max="4" class="slider" id="myRange" required>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 
     <?php
     // session_start();
