@@ -24,19 +24,18 @@
             <div class="year-con">
                 <label for="years">Enter years of prediction (1 to 4): </label>
                 <br>
-                <input type="range" id="years" name="years" min="1" max="4" class="slider" id="myRange" required>
+                <input type="range" id="years" name="years" min="1" max="4" class="slider" required>
+            </div>
+            <div class="checkbox-con">
+                <label>Select data to display:</label><br>
+                <input type="checkbox" id="stock_open" name="stock_open" value="1">
+                <label for="stock_open">Stock Open</label><br>
+                <input type="checkbox" id="stock_close" name="stock_close" value="1">
+                <label for="stock_close">Stock Close</label>
             </div>
             <button type="submit">Submit</button>
         </form>
     </div>
-
-    <?php
-    // session_start();
-    // if (isset($_SESSION["output_message"])) {
-    //     echo "<p>{$_SESSION["output_message"]}</p>";
-    //     unset($_SESSION["output_message"]);
-    // }
-    ?>
 
     <!-- Display the plots -->
     <h2>Raw Data Plot</h2>
