@@ -28,9 +28,9 @@
             </div>
             <div class="checkbox-con">
                 <label>Select data to display:</label><br>
-                <input type="checkbox" id="stock_open" name="stock_open" value="1">
+                <input type="checkbox" id="stock_open" name="stock_open" value="1" checked>
                 <label for="stock_open">Stock Open</label><br>
-                <input type="checkbox" id="stock_close" name="stock_close" value="1">
+                <input type="checkbox" id="stock_close" name="stock_close" value="1" checked>
                 <label for="stock_close">Stock Close</label>
             </div>
             <button type="submit">Submit</button>
