@@ -28,34 +28,85 @@
 }
 body{
     background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(38,42,52,1) 100%, rgba(30,37,50,1) 100%);
+    width: 100%;
     
 }
 .header{
     & h1{
         color: white;
         font-size: 36px;
+        margin-left: 2rem;
+        margin-bottom: 1rem;
     }
     & .button{
         margin: 1rem 0rem;
+        margin-left: 2rem;
     }
-    & a{
+    /* & a{
         border-radius: 10px;
         padding: 0.5rem 1.5rem;
         background-color: red;
         text-decoration: none;
         color: white;
-    }
-    & a:hover{
+    } */
+    /* & a:hover{
         background-color: darkred;
-    }
+    } */
 }
 
 input{
     border-radius: 5px;
+    margin-left: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
+
 label{
     font-size: 24px;
     color: white;
+    margin-left: 2rem;
 }
 
+.frame-con{
+    margin-top: 2rem;
+    margin-left: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 100%;
+    /* border: 1px solid red; */
+}
 
+.frame-item h2{
+    color: white;
+}
+
+label:nth-child(n+2){
+    margin-left: 0rem;
+}
+
+button{
+    margin-left: 2rem;
+    margin-top: 15px;
+    padding: 10px 25px 10px 25px;
+    color: black;
+    background-color: white;
+    border-radius: 10px;
+}
+
+button:hover{
+    background-color: deepskyblue;
+}
+
+a{
+    border-radius: 10px;
+    padding: 0.5rem 1.5rem;
+    margin-bottom: 50px;
+    margin-left: 2rem;
+    background-color: red;
+    text-decoration: none;
+    color: white;
+}
+
+a:hover{
+    background-color: darkred;
+}

@@ -40,7 +40,7 @@ def plot_raw_data(data, show_open, show_close):
         paper_bgcolor='rgba(0, 0, 0, 0)',  # Transparent background for the entire figure
         font=dict(color='white')  # Text color can be adjusted for visibility
     )
-    fig.write_html("D:/xampp/htdocs/asset/graph/raw_data_plot.html")
+    fig.write_html("C:/xampp/htdocs/asset/graph/raw_data_plot.html")
     print("Raw data plot saved as 'raw_data_plot.html'.")
 
 plot_raw_data(data, show_open, show_close)
@@ -64,13 +64,83 @@ fig1.update_traces(
 )
 
 fig1.update_layout(
-    xaxis_rangeslider_visible=False,
+    xaxis=dict(
+        rangeslider=dict(visible=False),  # Keep the range slider off
+        rangeselector=dict(
+            buttons=[
+                dict(count=7, label="1w", step="day", stepmode="backward"),
+                dict(count=1, label="1m", step="month", stepmode="backward"),
+                dict(count=6, label="6m", step="month", stepmode="backward"),
+                dict(count=1, label="1y", step="year", stepmode="backward"),
+                dict(step="all")  # Option to view all data
+            ],
+            font=dict(color="white"),  # Set text color of the range selector
+            bgcolor="rgba(0, 0, 0, 0.5)",  # Background color for the range selector
+            activecolor="deepskyblue"  # Active button color
+        )
+    ),
     width=900,
     height=600,
-    plot_bgcolor='rgba(0, 0, 0, 0)',  # Transparent background for the plot area
-    paper_bgcolor='rgba(0, 0, 0, 0)',  # Transparent background for the entire figure
-    font=dict(color='black')  # Set text color to white
+    plot_bgcolor="rgba(0, 0, 0, 0)",  # Transparent background for the plot area
+    paper_bgcolor="rgba(0, 0, 0, 0)",  # Transparent background for the entire figure
+    font=dict(color="white")  # Set text color to white
 )
 
-fig1.write_html("D:/xampp/htdocs/asset/graph/forecast_plot.html")
+# fig1.update_layout(
+#     xaxis_rangeslider_visible=False,
+#     width=900,
+#     height=600,
+#     plot_bgcolor='rgba(0, 0, 0, 0)',  # Transparent background for the plot area
+#     paper_bgcolor='rgba(0, 0, 0, 0)',  # Transparent background for the entire figure
+#     font=dict(color='white'),  # Set text color to white
+# )    
+    
+fig1.write_html("C:/xampp/htdocs/asset/graph/forecast_plot.html")
 print("Forecast plot saved as 'forecast_plot.html'.")
+
+
+# The 'activecolor' property is a color and may be specified as:
+#       - A hex string (e.g. '#ff0000')
+#       - An rgb/rgba string (e.g. 'rgb(255,0,0)')
+#       - An hsl/hsla string (e.g. 'hsl(0,100%,50%)')
+#       - An hsv/hsva string (e.g. 'hsv(0,100%,100%)')
+#       - A named CSS color:
+#             aliceblue, antiquewhite, aqua, aquamarine, azure,
+#             beige, bisque, black, blanchedalmond, blue,
+#             blueviolet, brown, burlywood, cadetblue,
+#             chartreuse, chocolate, coral, cornflowerblue,
+#             cornsilk, crimson, cyan, darkblue, darkcyan,
+#             darkgoldenrod, darkgray, darkgrey, darkgreen,
+#             darkkhaki, darkmagenta, darkolivegreen, darkorange,
+#             darkorchid, darkred, darksalmon, darkseagreen,
+#             darkslateblue, darkslategray, darkslategrey,
+#             darkturquoise, darkviolet, deeppink, deepskyblue,
+#             dimgray, dimgrey, dodgerblue, firebrick,
+#             floralwhite, forestgreen, fuchsia, gainsboro,
+#             ghostwhite, gold, goldenrod, gray, grey, green,
+#             greenyellow, honeydew, hotpink, indianred, indigo,
+#             ivory, khaki, lavender, lavenderblush, lawngreen,
+#             lemonchiffon, lightblue, lightcoral, lightcyan,
+#             lightgoldenrodyellow, lightgray, lightgrey,
+#             lightgreen, lightpink, lightsalmon, lightseagreen,
+#             lightskyblue, lightslategray, lightslategrey,
+#             lightsteelblue, lightyellow, lime, limegreen,
+#             linen, magenta, maroon, mediumaquamarine,
+#             mediumblue, mediumorchid, mediumpurple,
+#             mediumseagreen, mediumslateblue, mediumspringgreen,
+#             mediumturquoise, mediumvioletred, midnightblue,
+#             mintcream, mistyrose, moccasin, navajowhite, navy,
+#             oldlace, olive, olivedrab, orange, orangered,
+#             orchid, palegoldenrod, palegreen, paleturquoise,
+#             palevioletred, papayawhip, peachpuff, peru, pink,
+#             plum, powderblue, purple, red, rosybrown,
+#             royalblue, rebeccapurple, saddlebrown, salmon,
+#             sandybrown, seagreen, seashell, sienna, silver,
+#             skyblue, slateblue, slategray, slategrey, snow,
+#             springgreen, steelblue, tan, teal, thistle, tomato,
+#             turquoise, violet, wheat, white, whitesmoke,
+#             yellow, yellowgreen
+    
+    
+    
+    

@@ -9,9 +9,9 @@
 <body>
     <div class="header">
         <h1>Interactive Plot from Python</h1>
-        <div class="button">
+        <!-- <div class="button">
             <a href="../">Back</a>
-        </div>
+        </div> -->
     </div>
     <!-- Form to collect user inputs for the stock ticker and prediction period -->
     <div class="form-con">
@@ -38,9 +38,20 @@
     </div>
 
     <!-- Display the plots -->
-    <h2>Raw Data Plot</h2>
-    <iframe src="../asset/graph/raw_data_plot.html" width="50%" height="620px" style="border: none;"></iframe>
-    <h2>Forecast Plot</h2>
-    <iframe src="../asset/graph/forecast_plot.html" width="50%" height="620px" style="border: none;"></iframe>
+    <div class="frame-con">
+        <div class="frame-item">
+            <h2>Raw Data Plot</h2>
+            <iframe src="../asset/graph/raw_data_plot.html" width="100%" height="620px" style="border: none;"></iframe>
+        </div>
+        <div class="frame-item">
+            <h2>Forecast Plot</h2>
+            <iframe src="../asset/graph/forecast_plot.html" width="100%" height="620px" style="border: none;"></iframe>
+        </div>
+    </div>
+
+    <div class="button">
+            <a href="../">Back</a>
+        </div>
+    
 </body>
 </html>
