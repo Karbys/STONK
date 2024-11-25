@@ -28,10 +28,18 @@ data = load_data(TICKER)
 def plot_raw_data(data, show_open, show_close):
     fig = go.Figure()
     if show_open:
-        fig.add_trace(go.Scatter(x=data['Date'], y=data['Open'], name='Stock Open', line=dict(color='blue')))
+        fig.add_trace(go.Scatter(x=data['Date'], y=data['Open'], name='Stock Open', line=dict(color='lightgreen')))
     if show_close:
         fig.add_trace(go.Scatter(x=data['Date'], y=data['Close'], name='Stock Close', line=dict(color='red')))
-    fig.update_layout(title_text="Time Series Data", xaxis_rangeslider_visible=True, width=900, height=600)
+    fig.update_layout(
+        title_text=TICKER.upper(),
+        xaxis_rangeslider_visible=False,
+        width=900,
+        height=600,
+        plot_bgcolor='rgba(0, 0, 0, 0)',  # Transparent background for the plot area
+        paper_bgcolor='rgba(0, 0, 0, 0)',  # Transparent background for the entire figure
+        font=dict(color='white')  # Text color can be adjusted for visibility
+    )
     fig.write_html("D:/xampp/htdocs/asset/graph/raw_data_plot.html")
     print("Raw data plot saved as 'raw_data_plot.html'.")
 
@@ -49,6 +57,20 @@ forecast = m.predict(future)
 
 # Save forecast plot
 fig1 = plot_plotly(m, forecast)
-fig1.update_layout(width=900, height=600)
+
+# Modify forecast plot to set marker color to white for the data points
+fig1.update_traces(
+    marker=dict(color='white', size=5)  # Set marker color to white and size to 5 (you can adjust the size)
+)
+
+fig1.update_layout(
+    xaxis_rangeslider_visible=False,
+    width=900,
+    height=600,
+    plot_bgcolor='rgba(0, 0, 0, 0)',  # Transparent background for the plot area
+    paper_bgcolor='rgba(0, 0, 0, 0)',  # Transparent background for the entire figure
+    font=dict(color='black')  # Set text color to white
+)
+
 fig1.write_html("D:/xampp/htdocs/asset/graph/forecast_plot.html")
 print("Forecast plot saved as 'forecast_plot.html'.")

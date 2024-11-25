@@ -21,8 +21,8 @@ function drawLine() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
     const gradient = ctx.createLinearGradient(0, canvas.height, 0, 0);
-    gradient.addColorStop(0, 'rgba(90,60,255, 0.8)');
-    gradient.addColorStop(1, 'rgba(140,180,255, 0.6)');
+    gradient.addColorStop(1, 'rgba(34,180,255, 0.7)');
+    gradient.addColorStop(0, 'rgba(29, 30, 34,1)');
 
     ctx.beginPath();
     for (let index = 0; index < progress && index < dataPoints.length; index++) {
@@ -33,7 +33,7 @@ function drawLine() {
         const opacity = Math.min(1, index / framesForTransition); // Opacity transitions from 0 to 1
 
         // Set the stroke style with the calculated opacity
-        ctx.strokeStyle = `rgba(0,0,0, ${opacity})`; // Line color with dynamic opacity
+        ctx.strokeStyle = `rgba(255,255,255, ${opacity})`; // Line color with dynamic opacity
 
         if (index === 0) {
             ctx.moveTo(x, y);
@@ -47,7 +47,7 @@ function drawLine() {
     ctx.closePath();
 
     // Set the glow effect for the stroke
-    ctx.shadowColor = 'rgba(255, 255, 255, 0.7)'; // White glow
+    ctx.shadowColor = 'rgba(255, 255, 255, 0.4)'; // White glow
     ctx.shadowBlur = 20; // Adjust blur level for the glow effect
     ctx.shadowOffsetX = 0; // No horizontal offset
     ctx.shadowOffsetY = 0; // No vertical offset

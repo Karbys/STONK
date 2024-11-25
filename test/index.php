@@ -24,7 +24,7 @@
             <div class="year-con">
                 <label for="years">Enter years of prediction (1 to 4): </label>
                 <br>
-                <input type="range" id="years" name="years" min="1" max="4" class="slider" required>
+                <input type="range" id="years" name="years" min="1" max="4" class="slider" value="1" required>
             </div>
             <div class="checkbox-con">
                 <label>Select data to display:</label><br>

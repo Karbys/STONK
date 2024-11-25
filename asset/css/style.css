@@ -40,7 +40,7 @@ html {
     width: 100%;
     height: auto;
     position: fixed;
-    z-index: 1;
+    z-index: 99;
     padding: 1rem 3rem;
     /* background: linear-gradient(to right, var(--dark_100) 60% , var(--dark_200) 100%); */
     background: linear-gradient(90deg, rgba(30,37,50,1) 0%, rgba(38,42,52,1) 0%, rgba(0,0,0,1) 100%);
@@ -52,16 +52,15 @@ html {
         & h1 {
             font-size: 55px;
             font-family: "Handjet", sans-serif;
-            font-weight: 300;
+            font-weight: 400;
             color: var(--white);
-            text-shadow: 0 0 5px #004eaa, 0 0 5px #004eaa, 0 0 15px #004eaa, 0 0 20px #0075ff, 0 0 25px #0075ff;
+            text-shadow: 0 0 5px rgba(34,180,255, 1), 0 0 5px #004eaa, 0 0 15px #004eaa, 0 0 20px #0075ff, 0 0 25px #0075ff;
         }
         
         & ul{
             font-weight: 600;
             display: flex;
             & li{   
-                
                 list-style: none;
                 margin-right: 1rem;
                 & a{
@@ -120,90 +119,36 @@ html {
         bottom: 20%;
         /* border: 1px solid red; */
         /* From Uiverse.io by kleenpulse */ 
-        & .btn {
-            --border-color: linear-gradient(-45deg, #ffae00, var(--green_gradient2), var(--green_100));
-            --border-width: 0.125em;
-            --curve-size: 0.5em;
-            --blur: 30px;
-            --bg: #080312;
-            color: var(--white);
-            cursor: pointer;
-            /* use position: relative; so that BG is only for .btn */
-            position: relative;
-            isolation: isolate;
-            display: inline-grid;
-            place-content: center;
-            padding: 0.5em 1.5em;
-            font-size: 30px;
+        /* From Uiverse.io by mi-series */ 
+        .btn {
+            outline: 0;
+            display: inline-flex;
+            align-items: center;
+            justify-content: space-between;
+            background: var(--bb1);
+            min-width: 200px;
             border: 0;
-            text-transform: uppercase;
-            box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.6);
-            clip-path: polygon(
-            /* Top-left */ 0% var(--curve-size),
-            var(--curve-size) 0,
-            /* top-right */ 100% 0,
-            100% calc(100% - var(--curve-size)),
-            /* bottom-right 1 */ calc(100% - var(--curve-size)) 100%,
-            /* bottom-right 2 */ 0 100%
-            );
-            transition: color 250ms;
-        }
-        
-        & .btn::after,
-        & .btn::before {
-            content: "";
-            position: absolute;
-            inset: 0;
-        }
-        
-        & .btn::before {
-            background: var(--border-color);
-            background-size: 300% 300%;
-            animation: move-bg7234 5s ease infinite;
-            z-index: -2;
-        }
-        
-        & .btn::after {
-            background: var(--dark_100);
-            z-index: -1;
-            clip-path: polygon(
-            /* Top-left */ var(--border-width)
-                calc(var(--curve-size) + var(--border-width) * 0.5),
-            calc(var(--curve-size) + var(--border-width) * 0.5) var(--border-width),
-            /* top-right */ calc(100% - var(--border-width)) var(--border-width),
-            calc(100% - var(--border-width))
-                calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
-            /* bottom-right 1 */
-                calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
-                calc(100% - var(--border-width)),
-            /* bottom-right 2 */ var(--border-width) calc(100% - var(--border-width))
-            );
-            transition: clip-path 500ms;
-        }
-        
-        & .btn:where(:hover, :focus)::after {
-            clip-path: polygon(
-            /* Top-left */ calc(100% - var(--border-width))
-                calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
-            calc(100% - var(--border-width)) var(--border-width),
-            /* top-right */ calc(100% - var(--border-width)) var(--border-width),
-            calc(100% - var(--border-width))
-                calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5)),
-            /* bottom-right 1 */
-                calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
-                calc(100% - var(--border-width)),
-            /* bottom-right 2 */
-                calc(100% - calc(var(--curve-size) + var(--border-width) * 0.5))
-                calc(100% - var(--border-width))
-            );
-            transition: 200ms;
-        }
-        
-        & .btn:where(:hover, :focus) {
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, .1);
+            box-sizing: border-box;
+            padding: 16px 20px;
             color: #fff;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            overflow: hidden;
+            cursor: pointer;
         }
         
+        .btn:hover {
+            opacity: .95;
+        }
         
+        .btn .animation {
+            border-radius: 100%;
+            animation: ripple 0.6s linear infinite;
+        }
     }
 }
 .section_2{
@@ -377,6 +322,7 @@ html {
         
     }
     & .about-con{
+        margin-top: 2rem;
         background: linear-gradient(90deg, rgba(30,37,50,1) 0%, rgba(38,42,52,1) 0%, rgba(0,0,0,1) 100%);
         position: relative;
         padding-top: auto;
@@ -407,7 +353,7 @@ html {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 880px; /* Set the height of the container */
+    height: 1000px; /* Set the height of the container */
     width: 100%; /* Set the width of the container */
     /* background: #001f1d; */
     position: relative;
@@ -536,6 +482,15 @@ html {
     }
 }
 
+@keyframes ripple {
+    0% {
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.1), 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1);
+    }
+
+    100% {
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0.1), 0 0 0 40px rgba(255, 255, 255, 0.1), 0 0 0 60px rgba(255, 255, 255, 0.1), 0 0 0 80px rgba(255, 255, 255, 0);
+    }
+}
 
 
   /* From Uiverse.io by MikeAndrewDesigner */ 
