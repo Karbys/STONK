@@ -40,7 +40,7 @@ def plot_raw_data(data, show_open, show_close):
             yanchor='top'
         ),
         xaxis_title="Date",  # Title for the x-axis
-        yaxis_title="Stock Price",  # Title for the y-axis
+        yaxis_title="Stock Price (USD)",  # Title for the y-axis
         xaxis_rangeslider_visible=False,
         width=900,
         height=600,
