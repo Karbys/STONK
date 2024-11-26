@@ -35,7 +35,7 @@
                     <input type="text" id="ticker" name="ticker" placeholder="Enter stock ticker(e.g., AAPL)" required>
                 </div>
                 <div class="year-con">
-                    <label for="years">Year (1 to 4)</label>
+                    <!-- <label for="years">Year (1 to 4)</label> -->
                     <br>
                     <!-- <input type="range" id="years" name="years" min="1" max="4" class="slider" value="1"required> -->
                     <span id="rangeValue">0</span>
@@ -142,7 +142,7 @@
 
     <script type="text/javascript">
         function rangeSlide(value) {
-            document.getElementById('rangeValue').innerHTML = value;
+            document.getElementById('rangeValue').innerHTML = "Year " + value;
         }
     </script>
 </body>

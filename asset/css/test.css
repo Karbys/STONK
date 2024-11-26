@@ -150,9 +150,9 @@ body {
         }
         .range {
           /* border: 1px solid red; */
+          -webkit-appearance: none;
           width: 350px;
           height: 15px;
-          -webkit-appearance: none;
           background: #111;
           outline: none;
           border-radius: 15px;
