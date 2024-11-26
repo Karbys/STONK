@@ -109,7 +109,6 @@ body {
       width: 100%;
       
       & .ticker-con{
-        margin-bottom: 1rem;
         color: white;
         & label {
           font-size: 20px;
@@ -132,7 +131,6 @@ body {
           margin-top: 0.5rem;
           color: white;
           border-radius: 5px;
-
         }
         div {
           position: absolute;
@@ -187,6 +185,9 @@ body {
 
   /* Media query for responsive grid and hiding overflow */
   @media (max-width: 1200px) {
+    body{
+      overflow: hidden;
+    }
       .frame-con {
           grid-template-columns: 1fr; /* Stack items in a single column */
       }
